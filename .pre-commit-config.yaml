@@ -177,7 +177,7 @@ repos:
           - --output-format=colorized
         additional_dependencies:
           - distronode-compat>=4.1.10
-          - distronode-core>=2.14.0
+          - distronode-core==2.17.0.dev0
           - black>=22.10.0
           - docutils
           - filelock>=3.12.2
