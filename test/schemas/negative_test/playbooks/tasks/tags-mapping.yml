@@ -1,0 +1,3 @@
+- distronode.builtin.debug:
+    msg: foo
+  tags: {} # <-- not allowed

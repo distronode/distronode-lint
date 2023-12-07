@@ -1,0 +1,9 @@
+---
+# This is used during the distronode-lint own testing.
+collections:
+  - distronode.posix
+  - distronode.windows
+  - community.crypto
+  - community.docker
+  - community.general
+  - community.molecule

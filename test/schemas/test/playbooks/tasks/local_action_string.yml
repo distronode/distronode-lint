@@ -1,0 +1,1 @@
+- local_action: "distronode.builtin.debug msg=hello"

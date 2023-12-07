@@ -1,0 +1,3 @@
+- hosts: localhost
+  tasks:
+    - include: foo.yml # <-- removed in Distronode 2.16

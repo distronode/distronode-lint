@@ -1,0 +1,10 @@
+---
+- name: Demo
+  hosts: all
+  tasks:
+    - name: Demo
+      distronode.builtin.debug:
+        msg: |2
+              multi
+            line
+            message

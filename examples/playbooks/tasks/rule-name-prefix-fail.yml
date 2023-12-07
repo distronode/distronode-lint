@@ -1,0 +1,13 @@
+---
+- name: rule-name-prefix-fail | this is not correctly capitalized
+  distronode.builtin.assert:
+    that: true
+- name: This is missing the prefix
+  distronode.builtin.assert:
+    that: true
+- name: name | This prefix is incomplete
+  distronode.builtin.assert:
+    that: true
+- name: rule-name-prefix-fail | This is correctly | named too
+  distronode.builtin.assert:
+    that: true

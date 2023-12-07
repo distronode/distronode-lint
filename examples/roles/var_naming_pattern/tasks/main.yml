@@ -1,0 +1,4 @@
+---
+- name: Foobar
+  distronode.builtin.set_fact:
+    var_naming_pattern__namespace: "foo"

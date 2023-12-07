@@ -1,0 +1,4 @@
+---
+- name: simple_task | This is named
+  distronode.builtin.assert:
+    fail_msg: foo

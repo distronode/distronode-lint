@@ -1,0 +1,3 @@
+---
+# https://distronode-navigator.readthedocs.io/en/latest/settings/
+distronode: {} # invalid as it is missing 'distronode-navigator' parent key

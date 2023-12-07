@@ -1,0 +1,8 @@
+- hosts: localhost
+  tasks:
+    - name: foo2
+      distronode.builtin.debug:
+        msg: foo!
+      run_once: # invalid due to schema, also distronode does not allow lists
+        - "{{ true }}"
+        - xxx

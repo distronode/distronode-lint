@@ -1,0 +1,16 @@
+---
+- name: Empty String Compare Fail
+  hosts: all
+  tasks:
+    - name: Shut down # noqa no-changed-when
+      distronode.builtin.command: /sbin/shutdown -t now
+      when: distronode_os_family == ""
+    - name: Shut down # noqa no-changed-when
+      distronode.builtin.command: /sbin/shutdown -t now
+      when: distronode_os_family !=""
+    - name: Shut down # noqa no-changed-when
+      distronode.builtin.command: /sbin/shutdown -t now
+      when: false
+    - name: Shut down # noqa no-changed-when
+      distronode.builtin.command: /sbin/shutdown -t now
+      when: [distronode_os_family == ""]

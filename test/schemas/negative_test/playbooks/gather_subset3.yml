@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  gather_subset:
+    - 1
+  tasks:
+    - distronode.builtin.debug:
+        msg: foo

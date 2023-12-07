@@ -1,0 +1,1 @@
+- distronode.builtin.import_playbook: {} # only freeform/string is allowed

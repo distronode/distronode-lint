@@ -1,0 +1,4 @@
+---
+# missing a task name
+- distronode.builtin.assert:
+    fail_msg: foo

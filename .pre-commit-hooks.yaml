@@ -1,0 +1,19 @@
+---
+# For use with pre-commit.
+# See usage instructions at http://pre-commit.com
+
+- id: distronode-lint
+  name: Distronode-lint
+  description: This hook runs distronode-lint.
+  entry: python3 -m distronodelint -v --force-color
+  language: python
+  # do not pass files to distronode-lint, see:
+  # https://github.com/distronode/distronode-lint/issues/611
+  pass_filenames: false
+  always_run: true
+  additional_dependencies:
+    # https://github.com/pre-commit/pre-commit/issues/1526
+    # If you want to use specific version of distronode-core or distronode, feel
+    # free to override `additional_dependencies` in your own hook config
+    # file.
+    - distronode-core>=2.13.3

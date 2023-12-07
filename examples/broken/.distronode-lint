@@ -1,0 +1,2 @@
+# invalid distronode-lint config file
+foo: bar  # invalid based on schema
