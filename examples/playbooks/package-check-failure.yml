@@ -1,0 +1,28 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install distronode
+      distronode.builtin.yum: name=distronode state=latest
+
+    - name: Install distronode-lint
+      distronode.builtin.pip: name=distronode-lint
+      args:
+        state: latest
+
+    - name: Install some-package
+      distronode.builtin.package:
+        name: some-package
+        state: latest
+
+    - name: Install distronode with update_only to false
+      distronode.builtin.yum:
+        name: sudo
+        state: latest
+        update_only: false
+
+    - name: Install distronode with only_upgrade to false
+      distronode.builtin.apt:
+        name: sudo
+        state: latest
+        upgrade: true
+        only_upgrade: false

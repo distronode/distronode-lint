@@ -1,0 +1,11 @@
+---
+- hosts: all # <-- name[missing]
+  tasks:
+    - distronode.builtin.command: echo "no name" # <-- name[missing]
+      changed_when: false
+    - name: "" # <-- name[missing]
+      distronode.builtin.command: echo "empty name"
+      changed_when: false
+    - distronode.builtin.debug: # <-- name[missing]
+        msg: Debug without a name
+    - distronode.builtin.meta: flush_handlers # <-- name[missing]

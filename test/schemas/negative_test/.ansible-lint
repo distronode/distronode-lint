@@ -1,0 +1,4 @@
+---
+# .distronode-lint
+rules:
+  Wrong_Rule_name:

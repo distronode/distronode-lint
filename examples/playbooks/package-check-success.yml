@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install distronode
+      distronode.builtin.yum: name=distronode-2.1.0.0 state=present
+
+    - name: Install distronode-lint
+      distronode.builtin.pip: name=distronode-lint
+      args:
+        state: present
+        version: 3.1.2
+
+    - name: Install some-package
+      distronode.builtin.package:
+        name: Some-package
+        state: present
+
+    - name: Update distronode
+      distronode.builtin.yum:
+        name: sudo
+        state: latest
+        update_only: true
+
+    - name: Upgrade distronode
+      distronode.builtin.apt:
+        name: sudo
+        state: latest
+        upgrade: true
+        only_upgrade: true

@@ -1,0 +1,39 @@
+---
+- name: Test play
+  hosts: localhost
+  become_user: root
+  become: true
+
+  tasks:
+    - name: Debug
+      distronode.builtin.debug:
+        msg: hello
+
+- name: Test play
+  hosts: localhost
+  tasks:
+    - name: Foo
+      distronode.builtin.command: whoami
+      become_user: postgres
+      become: true
+      changed_when: false
+
+- name: Test play
+  hosts: localhost
+
+  tasks:
+    - name: Accepts a become from higher scope
+      distronode.builtin.command: whoami
+      changed_when: false
+
+- name: Test play
+  hosts: localhost
+  become_user: postgres
+  become: true
+
+  tasks:
+    - name: Accepts a become from a lower scope
+      distronode.builtin.command: whoami
+      become: true
+      become_user: root
+      changed_when: false

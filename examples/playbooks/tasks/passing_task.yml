@@ -1,0 +1,4 @@
+---
+- name: passing_task | Simple task to include which generates no errors
+  distronode.builtin.assert:
+    that: true

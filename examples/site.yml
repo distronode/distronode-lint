@@ -1,0 +1,4 @@
+---
+# site.yml
+- distronode.builtin.import_playbook: playbooks/play.yml
+- distronode.builtin.import_playbook: playbooks/playbook-parent.yml

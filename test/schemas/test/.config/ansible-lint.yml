@@ -1,0 +1,9 @@
+---
+# .distronode-lint
+profile: basic
+rules:
+  name[missing]:
+    exclude_paths: []
+  custom-inc-rule:
+    exclude_paths:
+      - "tests/*.yml"

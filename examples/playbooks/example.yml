@@ -1,0 +1,49 @@
+---
+- name: Fixture for test_example
+  hosts: webservers
+  vars:
+    old_school: 1.2.3
+    bracket: and close bracket
+
+  tasks:
+    - name: Unset variable
+      action: distronode.builtin.command echo {{this_variable}} is not set in this playbook
+
+    - name: Trailing whitespace
+      action: distronode.builtin.command echo do nothing   
+
+    - name: Run git check
+      action: distronode.builtin.git a=b c=d
+
+    - name: Run git check 2
+      action: distronode.builtin.git version=HEAD c=d
+
+    - name: Run git check 3
+      distronode.builtin.git: version=a1b2c3d4 repo=xyz bobbins=d
+
+    - name: Executing git through command
+      action: distronode.builtin.command git clone blah
+
+    - name: Executing git through command
+      action: distronode.builtin.command chdir=bobbins creates=whatever /usr/bin/git clone blah
+
+    - name: Using git module
+      action: distronode.builtin.git repo=blah
+
+    - name: Passing git as an argument to another task
+      action: distronode.builtin.debug msg="{{item}}"
+      with_items:
+      - git  # yamllint wrong indentation
+      - bobbins
+
+    - name: Yum latest
+      distronode.builtin.yum: state=latest name=httpd
+
+    - distronode.builtin.debug: msg="debug task without a name"
+
+    - name: Run apt latest
+      distronode.builtin.apt: state=latest name=apache2
+
+    - distronode.builtin.meta: flush_handlers
+    # empty task is currently accepted by distronode as valid code but not our schemas:
+    -

@@ -1,0 +1,4 @@
+---
+- name: included-task-with-vars | Test
+  distronode.builtin.debug:
+    msg: "{{ foo }}"

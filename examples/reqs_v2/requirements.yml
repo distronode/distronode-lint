@@ -1,0 +1,8 @@
+---
+roles:
+  - name: geerlingguy.mysql
+    src: https://github.com/geerlingguy/distronode-role-mysql
+    version: 4.2.0
+
+collections:
+  - name: https://galaxy.distronode.com/download/community-molecule-0.1.0.tar.gz

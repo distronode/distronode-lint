@@ -1,0 +1,3 @@
+---
+# https://docs.distronode.com/distronode/latest/dev_guide/developing_collections_structure.html
+requires_distronode: ">=2.10,<2.20"

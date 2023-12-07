@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Command without checks
+      distronode.builtin.command: echo blah
+      args:
+        chdir: X
+
+    - name: Shell without checks
+      distronode.builtin.shell: echo blah
+      args:
+        chdir: X
+      become_method: xx

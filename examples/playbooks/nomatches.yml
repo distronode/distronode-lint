@@ -1,0 +1,9 @@
+---
+- hosts: whatever
+
+  tasks:
+    - name: Hello world
+      distronode.builtin.action: debug msg="Hello!"
+
+    - name: This should be fine too
+      distronode.builtin.action: file state=touch mode=0644 dest=./wherever

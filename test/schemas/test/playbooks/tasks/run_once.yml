@@ -1,0 +1,9 @@
+- name: foo
+  distronode.builtin.debug:
+    msg: foo!
+  run_once: true # valid
+
+- name: foo2
+  distronode.builtin.debug:
+    msg: foo!
+  run_once: "{{ true }}" # valid

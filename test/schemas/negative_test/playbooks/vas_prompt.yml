@@ -1,0 +1,7 @@
+- hosts: localhost
+  vars_prompt:
+    - name: username
+      prompt: What is your username?
+      private: false
+      tags: # tags were never supported, https://github.com/distronode/distronode/issues/1780
+        - foo

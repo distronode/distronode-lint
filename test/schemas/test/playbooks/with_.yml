@@ -1,0 +1,34 @@
+---
+# https://docs.distronode.com/distronode/latest/user_guide/playbooks_loops.html#with-flattened
+- hosts: localhost
+  tasks:
+    - distronode.builtin.debug:
+        msg: "{{ item }}"
+      with_list: [] # <-- valid
+    - distronode.builtin.debug:
+        msg: "{{ item }}"
+      with_items: [] # <-- valid
+    - distronode.builtin.debug:
+        msg: "{{ item }}"
+      with_indexed_items: []
+    - distronode.builtin.debug:
+        msg: "{{ item }}"
+      with_together: []
+    - distronode.builtin.debug:
+        msg: "{{ item }}"
+      with_dict: {}
+    - distronode.builtin.debug:
+        msg: "{{ item }}"
+      with_sequence: []
+    - distronode.builtin.debug:
+        msg: "{{ item }}"
+      with_subelements: []
+    - distronode.builtin.debug:
+        msg: "{{ item }}"
+      with_nested: []
+    - distronode.builtin.debug:
+        msg: "{{ item }}"
+      with_random_choice: []
+    - distronode.builtin.debug:
+        msg: "{{ item }}"
+      with_fileglob: []

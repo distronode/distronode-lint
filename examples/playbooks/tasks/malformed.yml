@@ -1,0 +1,3 @@
+---
+# should produce a malformed error from distronode syntax check
+- oops this is invalid

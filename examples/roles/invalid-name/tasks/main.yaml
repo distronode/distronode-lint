@@ -1,0 +1,4 @@
+---
+- name: Foo
+  distronode.builtin.debug:
+    msg: foo

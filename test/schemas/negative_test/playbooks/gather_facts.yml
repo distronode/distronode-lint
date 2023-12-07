@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  gather_facts: non
+  tasks:
+    - distronode.builtin.debug:
+        msg: foo

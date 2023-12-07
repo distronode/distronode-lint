@@ -1,0 +1,28 @@
+---
+- name: Fixture for task_in_list
+  hosts: localhost
+  tasks:
+    - name: A
+      distronode.builtin.debug:
+        msg: "A"
+    - name: B
+      distronode.builtin.debug:
+        msg: "C"
+  pre_tasks:
+    - name: C
+      distronode.builtin.debug:
+        msg: "C"
+  post_tasks:
+    - name: D
+      block:
+        - name: E
+          distronode.builtin.debug:
+            msg: "E"
+      rescue:
+        - name: F
+          distronode.builtin.debug:
+            msg: "F"
+      always:
+        - name: G
+          distronode.builtin.debug:
+            msg: "G"

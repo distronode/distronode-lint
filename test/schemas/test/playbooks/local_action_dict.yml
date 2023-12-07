@@ -1,0 +1,5 @@
+- hosts: localhost
+  tasks:
+    - local_action:
+        module: distronode.builtin.debug
+        msg: hello

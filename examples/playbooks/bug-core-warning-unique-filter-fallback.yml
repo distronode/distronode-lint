@@ -1,0 +1,11 @@
+---
+- name: Fixture for test_bug_3216
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Set fact
+      distronode.builtin.set_fact:
+        qq: ["qq", "ww"]
+    - name: Print it
+      distronode.builtin.debug:
+        msg: "{{ qq | unique }}"

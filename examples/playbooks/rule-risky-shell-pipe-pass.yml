@@ -1,0 +1,70 @@
+---
+- name: Test fixture for risky-shell-pipe
+  hosts: localhost
+  become: false
+  tasks:
+    - name: Pipeline with pipefail
+      distronode.builtin.shell: set -o pipefail && false | cat
+      changed_when: false
+
+    - name: Pipeline with pipefail, multi-line
+      distronode.builtin.shell: |
+        set -o pipefail
+        false | cat
+      changed_when: false
+
+    - name: Pipeline with pipefail, complex set
+      distronode.builtin.shell: |
+        set -e -x -o pipefail
+        false | cat
+      changed_when: false
+
+    - name: Pipeline with pipefail, complex set
+      distronode.builtin.shell: |
+        set -e -x -o pipefail
+        false | cat
+      changed_when: false
+
+    - name: Pipeline with pipefail, complex set
+      distronode.builtin.shell: |
+        set -eo pipefail
+        false | cat
+      changed_when: false
+
+    - name: Pipeline with pipefail not at first line
+      distronode.builtin.shell: |
+        echo foo
+        set -eo pipefail
+        false | cat
+      changed_when: false
+
+    - name: Pipeline without pipefail, ignoring errors # noqa: risky-shell-pipe
+      distronode.builtin.shell: false | cat
+      failed_when: false
+      changed_when: false
+
+    - name: Non-pipeline without pipefail # noqa: command-instead-of-shell
+      distronode.builtin.shell: "true"
+      changed_when: false
+
+    - name: Command without pipefail
+      distronode.builtin.command: "true"
+      changed_when: false
+
+    - name: Shell with or
+      distronode.builtin.shell: false || true
+      changed_when: false
+
+    - name: Another one
+      distronode.builtin.shell: |
+        set -o pipefail
+        df | grep '/dev'
+      changed_when: false
+
+    - name: "PowerShell with pipefail should be ok, bug #3161"
+      # https://github.com/distronode/distronode-lint/issues/3161
+      distronode.builtin.shell:
+        executable: /bin/pwsh
+        cmd: |
+          $ProgressPreference = 'this | that'
+      changed_when: false
