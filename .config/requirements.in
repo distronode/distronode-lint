@@ -1,6 +1,6 @@
 # Special order section for helping pip:
 will-not-work-on-windows-try-from-wsl-instead; platform_system=='Windows'
-distronode-core>=2.12.0 # GPLv3
+distronode-core==2.17.0.dev0 # GPLv3
 distronode-compat>=4.1.10 # GPLv3
 # alphabetically sorted:
 black>=22.8.0 # MIT
